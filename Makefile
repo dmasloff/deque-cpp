@@ -27,7 +27,7 @@ run: build
 
 lint:
 	@echo 'Check code is formatted'
-	bash -c "diff -u <(cat *.h *.cpp) <(clang-format --style=file --Werror src/*.h src/*.cpp)"
+	bash -c "diff -u <(cat src/*.h src/*.cpp) <(clang-format --style=file --Werror src/*.h src/*.cpp)"
 	@echo 'Run linter'
 	clang-tidy --config "$(shell cat .clang-tidy)" --warnings-as-errors="*" tests/deque_test.cpp '-header-filter=.*' -- -std=c++20 -g -O0 -Wall -Wextra -Werror
 	@echo 'Check NOLINT is not used'
