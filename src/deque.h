@@ -587,4 +587,3 @@ bool operator>=(const deque_iterator<T, is_const1>& first,
 }
 
 #endif  //DEQUE_DMASLOFF_DEQUE_H
-
